@@ -1,0 +1,27 @@
+cloudinary_defaults: &cloudinary_defaults
+  service: Cloudinary
+  secure: true # Asegura que se usen URLs HTTPS
+  cloud_name: <%= ENV["CLOUD_NAME"] %>
+  api_key: <%= ENV["CLOUDINARY_KEY"] %>
+  api_secret: <%= ENV["CLOUD_API_SECRET_CLOUDINARY"] %>
+
+
+cloudinary_test:
+  <<: *cloudinary_defaults
+  tags: ["test"]
+
+cloudinary_development:
+  <<: *cloudinary_defaults
+  tags: ["development"]
+
+cloudinary_production:
+  <<: *cloudinary_defaults
+  tags: ["production"]
+
+test:
+  service: Disk
+  root: <%= Rails.root.join("tmp/storage") %>
+
+local:
+  service: Disk
+  root: <%= Rails.root.join("storage") %>

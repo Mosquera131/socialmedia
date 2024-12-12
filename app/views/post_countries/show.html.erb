@@ -1,0 +1,32 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="bg-white shadow-md rounded-lg p-6">
+    <% if notice.present? %>
+      <p class="py-2 px-3 bg-green-50 text-green-500 font-medium rounded-lg mb-4" id="notice">
+        <%= notice %>
+      </p>
+    <% end %>
+
+    <!-- Render del objeto post_country -->
+    <div class="mb-6">
+      <%= render @post_country %>
+    </div>
+    <!-- Imagen del formulario -->
+    <% if @post_country.photo.attached? %>
+      <div class="mt-6">
+        <h3 class="text-lg font-semibold text-gray-700 mb-2">Imagen del Formulario:</h3>
+        <%= image_tag url_for(@post_country.photo), alt: "Imagen del Formulario", class: "w-full h-auto rounded-md shadow-md" %>
+      </div>
+    <% else %>
+      <p class="text-gray-500 mt-6">No se ha cargado ninguna imagen para este formulario.</p>
+    <% end %>
+
+      <!-- Acciones: Editar, Volver y Eliminar -->
+    <div class="flex items-center gap-4">
+      <%= link_to "Edit this post country", edit_post_country_path(@post_country), class: "rounded-lg py-3 px-5 bg-blue-600 text-white font-medium hover:bg-blue-700 transition duration-200" %>
+      <%= link_to "Back to post countries", post_countries_path, class: "rounded-lg py-3 px-5 bg-gray-100 text-gray-700 font-medium hover:bg-gray-200 transition duration-200" %>
+      <%= button_to "Destroy this post country", @post_country, method: :delete, class: "rounded-lg py-3 px-5 bg-red-600 text-white font-medium hover:bg-red-700 transition duration-200" %>
+    </div>
+    
+  </div>
+</div>
+

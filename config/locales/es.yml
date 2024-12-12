@@ -1,0 +1,15 @@
+es:
+  forms:
+    post_countries:
+      attributes:
+        country_name: "Nombre del País"
+        favorite_food: "Comida Favorita"
+        favorite_excursion: "Excursión Favorita"
+        date_of_arrival: "Fecha de Llegada"
+        date_of_departure: "Fecha de Salida"
+        photo: "Subir una Foto"
+        comment: "Comentario"
+      submit: "Guardar"
+      errors:
+        invalid_photo_format: "El archivo subido debe ser JPEG, PNG o GIF."
+        photo_too_large: "La foto es demasiado grande. El tamaño máximo permitido es 3MB."
