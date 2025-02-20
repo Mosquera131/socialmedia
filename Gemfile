@@ -38,7 +38,7 @@ gem "bootsnap", require: false
 
 
 #  assets img cloud
-gem "cloudinary", "~> 2.2"
+gem "cloudinary", "~> 2.3"
 gem "activestorage-cloudinary-service", "~> 0.2.0"
 
 
